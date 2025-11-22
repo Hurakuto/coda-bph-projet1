@@ -1,0 +1,32 @@
+<?php $path_number=1?>
+
+<h5>
+    <?= $pageContent[$path_number]?>
+</h5>
+
+<select name="choice1" id="storyChoice">
+    <?php foreach($paths[$path_number] as $value => $choice){ ?>
+
+        <option value="<?= $value?>">
+           <?= $choice ?>
+        </option>
+    <?php }?>
+
+</select>
+
+<?php
+if (isset($_GET["choice1"])){
+
+    if($_GET["choice1"]==='1'){
+	    require "templates/partials/choices/choice1-1.phtml";
+    }
+        
+    else if($_GET["choice1"]==='2'){
+	    require "templates/partials/choices/choice1-2.phtml";
+    }
+         
+    else if($_GET["choice1"]==='3'){
+	    require "templates/partials/choices/choice1-3.phtml";
+    }
+}
+?>
